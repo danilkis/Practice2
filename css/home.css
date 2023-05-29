@@ -1,0 +1,143 @@
+/* Top bar styles */
+#topbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#topbar img {
+  max-height: 50px;
+}
+
+#topbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+#topbar a:hover {
+  text-decoration: underline;
+}
+
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 36px;
+}
+
+p {
+  text-align: center;
+  font-size: 24px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  gap: 10px; /* Add vertical spacing between form elements */
+}
+
+input[type="text"],
+input[type="submit"] {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #ccc; /* add grey border to input fields */
+}
+
+input[type="submit"] {
+  background-color: blue; /* make calculate button blue */
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #0066cc; /* darken calculate button on hover */
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  gap: 5px;
+  margin-top: 20px;
+  grid-gap: 10px;
+}
+
+.grid-item input {
+  width: 30%;
+  padding: 5px;
+}
+
+.grid-item input[type="text"] {
+  text-align: center;
+}
+
+.grid-item input[type="number"] {
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.grid-item input[type="number"]::-webkit-inner-spin-button,
+.grid-item input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 10px;
+}
+
+/* home.css */
+
+/* Center the headers and use Google Sans font */
+h2 {
+  text-align: center;
+  font-family: "Google Sans", sans-serif;
+}
+
+/* Style the button */
+button {
+  font-family: "Google Sans", sans-serif;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom right, #C5FE9A, #F7AF9D);
+  border: none;
+  color: #000000;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Additional styling for button hover and focus states */
+button:hover,
+button:focus {
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="number"] {
+  border-radius: 10px;
+  background-color: #CDEDFD;
+  color: #000000;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
