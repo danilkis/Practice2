@@ -56,30 +56,6 @@ form {
   gap: 10px; /* Add vertical spacing between form elements */
 }
 
-input[type="text"],
-input[type="submit"] {
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 24px;
-  font-family: 'Roboto', sans-serif;
-  border: 2px solid #ccc;
-  background-color: #D0DB97;
-  color: white; /* Updated text color */
-}
-
-input[type="submit"] {
-  background-image: linear-gradient(to bottom right, #D0DB97, #69B578);
-  color: white;
-  transition: all 0.3s ease-in-out;
-}
-
-input[type="submit"]:hover {
-  background-image: linear-gradient(to bottom right, #69B578, #D0DB97);
-  cursor: pointer;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 4fr);
@@ -112,8 +88,9 @@ input[type="submit"]:hover {
 
 /* Center the headers and use Google Sans font */
 h2 {
-  text-align: center;
+  text-align: left; /* Updated text alignment */
   font-family: "Google Sans", sans-serif;
+  margin: 25px;
   color: white; /* Updated text color */
 }
 
@@ -133,9 +110,9 @@ h2 {
 /* Arrange buttons in a row */
 .button-row {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
-  margin-top: 20px;
+  margin: 25px;
 }
 
 /* Apply gradient classes to buttons */
@@ -182,6 +159,9 @@ input[type="number"] {
   padding: 5px;
   border: none;
   outline: none;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .grid-container {
@@ -191,7 +171,7 @@ input[type="number"] {
   grid-gap: 5px;
   justify-content: center;
   justify-self: center;
-  margin: auto;
+  margin: 25px;
   margin-top: 20px;
 }
 
@@ -201,3 +181,24 @@ input[type="number"] {
   align-items: center;
   justify-self: center;
 }
+
+.creator {
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    background-color: #254D32;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+    .creator img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }

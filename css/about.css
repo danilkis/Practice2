@@ -18,7 +18,7 @@ h1 {
 .creator {
     display: inline-block;
     width: calc(33.33% - 20px);
-    background-color: #254D32; /* Изменен цвет фона блока */
+    background-color: #254D32;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -38,13 +38,13 @@ h1 {
 
 h3 {
     font-size: 20px;
-    color: #D0DB97; /* Изменен цвет текста "Создатели" */
+    color: #D0DB97; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" */
     margin-bottom: 10px;
 }
 
 p {
     line-height: 1.5;
-    color: #FFF; /* Изменен цвет текста в блоках с информацией о создателях */
+    color: #FFF; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
 a {
@@ -57,11 +57,14 @@ a {
     }
 .back-button {
     display: inline-block;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 20px;
     text-decoration: none;
-    background-color: #D0DB97;
+    background-image: linear-gradient(to bottom right, #D0DB97, #69B578);
+    font-family: "Google Sans", sans-serif;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
     .back-button img {

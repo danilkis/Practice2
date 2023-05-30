@@ -30,6 +30,10 @@
         <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Рассчитать 1</button>
         <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
         </div>
+
+        <div class="creator">
+            <img src="/image/avabresh.png" alt="Брешенков Артём">
+        </div>
     </main>
 </body>
 </html>
