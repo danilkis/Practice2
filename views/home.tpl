@@ -104,7 +104,7 @@
 </head>
 <body>
     <div id="topbar">
-        <img src="/static/logo.png" alt="Logo">
+        <img src="/image/Logo.png" alt="Logo">
         <a href="/">Главная</a>
         <a href="/about">О нас</a>
     </div>
