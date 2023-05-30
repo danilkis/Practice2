@@ -4,7 +4,7 @@
     <title>ГрафМастер</title>
     <link rel="stylesheet" type="text/css" href="/css/home.css">
     <script>
-       function updateInputFields() {
+        function updateInputFields() {
             var numFields = parseInt(document.getElementById('numFields').value);
             var gridContainer1 = document.getElementById('gridContainer1');
             var gridContainer2 = document.getElementById('gridContainer2');
@@ -43,6 +43,53 @@
                 gridContainer2.appendChild(gridRow2);
             }
         }
+        function saveMatrices() {
+          var gridContainer1 = document.getElementById('gridContainer1');
+          var gridContainer2 = document.getElementById('gridContainer2');
+          var numFields = parseInt(document.getElementById('numFields').value);
+          var matrix1 = [];
+          var matrix2 = [];
+
+          // Retrieve values from gridContainer1
+          for (var j = 0; j < numFields; j++) {
+            var row = [];
+            for (var i = 0; i < numFields; i++) {
+              var gridRow = gridContainer1.getElementsByClassName('grid-row')[i];
+              var checkboxes = gridRow.getElementsByTagName('input');
+              row.push(checkboxes[j].checked ? 1 : 0);
+            }
+            matrix1.push(row);
+          }
+
+          // Retrieve values from gridContainer2
+          for (var j = 0; j < numFields; j++) {
+            var row = [];
+            for (var i = 0; i < numFields; i++) {
+              var gridRow = gridContainer2.getElementsByClassName('grid-row')[i];
+              var checkboxes = gridRow.getElementsByTagName('input');
+              row.push(checkboxes[j].checked ? 1 : 0);
+            }
+            matrix2.push(row);
+          }
+
+          // Create JSON objects
+          var jsonMatrix1 = JSON.stringify(matrix1);
+          var jsonMatrix2 = JSON.stringify(matrix2);
+
+          // Make the POST request
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              console.log('Request successful');
+              // Handle the response if needed
+            }
+          };
+
+          xhr.send(JSON.stringify({ matrix1: jsonMatrix1, matrix2: jsonMatrix2 }));
+        }
     </script>
 </head>
 <body>
@@ -65,7 +112,7 @@
         <div id="gridContainer2" class="grid-container">
             <!-- Grid 2 will be dynamically generated here -->
         </div>
-        <button>Рассчитать</button>
+        <button onclick="saveMatrices()">Рассчитать</button>
     </main>
 </body>
 </html>

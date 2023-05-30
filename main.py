@@ -8,6 +8,15 @@ def send_static(filename):
 def home():
     message = " "
     return template('home', message=message)
+@route('/', method='POST')
+def handle_post():
+    data = request.json
+
+    # Retrieve the matrices from the request data
+    matrix1 = data.get('matrix1')
+    matrix2 = data.get('matrix2')
+    print(matrix1)
+    print(matrix2)
 
 @route('/css/<filename>')
 def server_static(filename):
