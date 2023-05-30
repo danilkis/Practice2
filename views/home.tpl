@@ -90,6 +90,16 @@
 
           xhr.send(JSON.stringify({ matrix1: jsonMatrix1, matrix2: jsonMatrix2 }));
         }
+
+        function countButton1() {
+            saveMatrices(); // Call the saveMatrices() function for the first button
+            // Additional code for the first button...
+        }
+
+        function countButton2() {
+            saveMatrices(); // Call the saveMatrices() function for the second button
+            // Additional code for the second button...
+        }
     </script>
 </head>
 <body>
@@ -112,7 +122,11 @@
         <div id="gridContainer2" class="grid-container">
             <!-- Grid 2 will be dynamically generated here -->
         </div>
-        <button onclick="saveMatrices()">Рассчитать</button>
+        <div class="button-row">
+        <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Рассчитать</button>
+        <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Рассчитать 1</button>
+        <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
+        </div>
     </main>
 </body>
 </html>

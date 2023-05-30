@@ -1,7 +1,7 @@
 /* Top bar styles */
 #topbar {
-  background-color: #333;
-  color: white;
+  background-color: #254D32;
+  color: white; /* Updated text color */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,6 +27,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #181D27;
+  color: white; /* Updated text color */
 }
 
 h1 {
@@ -62,17 +64,19 @@ input[type="submit"] {
   margin: 5px;
   font-size: 24px;
   font-family: 'Roboto', sans-serif;
-  border: 2px solid #ccc; /* add grey border to input fields */
+  border: 2px solid #ccc;
+  background-color: #D0DB97;
+  color: white; /* Updated text color */
 }
 
 input[type="submit"] {
-  background-color: blue; /* make calculate button blue */
+  background-image: linear-gradient(to bottom right, #D0DB97, #69B578);
   color: white;
   transition: all 0.3s ease-in-out;
 }
 
 input[type="submit"]:hover {
-  background-color: #0066cc; /* darken calculate button on hover */
+  background-image: linear-gradient(to bottom right, #69B578, #D0DB97);
   cursor: pointer;
 }
 
@@ -110,33 +114,71 @@ input[type="submit"]:hover {
 h2 {
   text-align: center;
   font-family: "Google Sans", sans-serif;
+  color: white; /* Updated text color */
 }
 
-/* Style the button */
-button {
+/* Add gradient classes for each button */
+.button-gradient {
+  background-image: linear-gradient(to bottom right, #D0DB97, #69B578);
+}
+
+.button-gradient1 {
+  background-image: linear-gradient(to bottom right, #69B578, #D0DB97);
+}
+
+.button-gradient2 {
+  background-image: linear-gradient(to bottom right, #B1CC74, #D0DB97);
+}
+
+/* Arrange buttons in a row */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Apply gradient classes to buttons */
+button.count-button {
   font-family: "Google Sans", sans-serif;
   font-size: 16px;
   padding: 15px;
   border-radius: 20px;
-  background-image: linear-gradient(to bottom right, #C5E7E2, #B5DFCA);
   border: none;
   color: #000000;
-  display: block;
-  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Additional styling for button hover and focus states */
-button:hover,
-button:focus {
+button.count-button:hover,
+button.count-button:focus {
   outline: none;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation-name: gradient-rotation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
+
+@keyframes gradient-rotation {
+  0% {
+    background-position: top right;
+  }
+  50% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
 
 input[type="number"] {
   border-radius: 10px;
-  background-color: #CDEDFD;
-  color: #000000;
+  background-color: #D0DB97;
   padding: 5px;
   border: none;
   outline: none;
@@ -147,16 +189,15 @@ input[type="number"] {
   align-self: center;
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
   grid-gap: 5px;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   justify-self: center;
   margin: auto;
-  margin-top: 20px; /* Adjust margin-top as needed */
+  margin-top: 20px;
 }
 
 .grid-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-self: center; /* Center horizontally within grid item */
+  justify-self: center;
 }
-
