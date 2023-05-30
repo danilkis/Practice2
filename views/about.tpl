@@ -5,6 +5,9 @@
   <link rel="stylesheet" type="text/css" href="/css/about.css">
 </head>
 <body>
+  <a href="/" class="back-button">
+    <img src="/image/btn_back.png" alt="Назад" >
+  </a>
   <header>
     <h1>Создатели</h1>
   </header>
