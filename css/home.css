@@ -6,7 +6,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  /* Add animation */
+  animation-name: topbar-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 }
+
 
 #topbar img {
   max-height: 50px;
@@ -30,6 +36,8 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #181D27;
   color: white; /* Updated text color */
+  /* Add transition */
+  transition: background-color 0.5s ease-in-out;
 }
 
 h1 {
@@ -143,18 +151,15 @@ button.count-button:focus {
   animation-iteration-count: infinite;
 }
 
-@keyframes gradient-rotation {
+/* Add animation keyframes */
+@keyframes topbar-animation {
   0% {
-    background-position: top right;
-  }
-  50% {
-    background-position: bottom left;
+    transform: translateY(-100%);
   }
   100% {
-    background-position: top right;
+    transform: translateY(0);
   }
 }
-
 
 input[type="number"] {
   border-radius: 10px;

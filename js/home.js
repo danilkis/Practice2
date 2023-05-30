@@ -8,7 +8,7 @@ function updateInputFields() {
     for (var i = 0; i < numFields; i++) {
         var gridRow1 = document.createElement('div');
         var gridRow2 = document.createElement('div');
-        gridRow1.className = 'grid-row';
+        gridRow1.className = 'grid-row'; //TODO: Симетричные включения
         gridRow2.className = 'grid-row';
 
         for (var j = 0; j < numFields; j++) {
