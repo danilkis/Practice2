@@ -26,6 +26,10 @@ def handle_post():
 def server_static(filename):
     return static_file(filename, root='./css')
 
+@route('/js/<filename>')
+def server_static(filename):
+    return static_file(filename, root='./js')
+
 @route('/image/<filename>')
 def server_static(filename):
     return static_file(filename, root='./image')
