@@ -1,4 +1,4 @@
-from bottle import route, run, template, static_file, request
+from bottle import route, run, template, static_file, request, view
 
 @route('/static/<filename:path>')
 def send_static(filename):
@@ -6,6 +6,7 @@ def send_static(filename):
 
 @route('/')
 def home():
+
     message = " "
     return template('home', message=message)
 @route('/', method='POST')
@@ -23,6 +24,13 @@ def server_static(filename):
     return static_file(filename, root='./css')
 
 
+@route('/about')
+def about():
+
+    message = " "
+    return template('about', message=message)
+
 # Run the web application
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, template_path='./views')
+
