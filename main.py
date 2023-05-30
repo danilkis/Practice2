@@ -1,6 +1,3 @@
-import json
-import bottle
-
 from bottle import route, run, template, static_file, request
 
 @route('/static/<filename:path>')

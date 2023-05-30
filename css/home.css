@@ -141,3 +141,22 @@ input[type="number"] {
   border: none;
   outline: none;
 }
+
+.grid-container {
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  grid-gap: 5px;
+  justify-content: center; /* Center horizontally */
+  justify-self: center;
+  margin: auto;
+  margin-top: 20px; /* Adjust margin-top as needed */
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center; /* Center horizontally within grid item */
+}
+
