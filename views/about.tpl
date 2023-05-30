@@ -9,7 +9,7 @@
     <h1>Создатели</h1>
   </header>
   <div class="creator">
-    <img src="ivanov.jpg" alt="Брешенков Артём">
+    <img src="/image/avabresh.png" alt="Брешенков Артём">
     <h3>Брешенков Артём</h3>
     <p>
       Американский артист и продюсер, многократный номинант престижных кинопремий и один из самых высокооплачиваемых 
@@ -31,7 +31,7 @@
   </div>
   
   <div class="creator">
-    <img src="sidorov.jpg" alt="Дорофеев Алексей">
+    <img src="/image/avaleha.png" alt="Дорофеев Алексей">
     <h3>Дорофеев Алексей</h3>
     <p>
       Гений,<br> 
