@@ -37,8 +37,13 @@
                 <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
                 </div>
             </div>
-            <div class="creator">
-                <img src="/image/avabresh.png" alt="Брешенков Артём">
+            <div class="image_grid">
+                <div class="creator">
+                    <img src="/graphs_images/graph.png" alt="Граф 1">
+                </div>
+                <div class="creator">
+                    <img src="/graphs_images/graph.png" alt="Граф 2">
+                </div>
             </div>
         </div>
     </main>
