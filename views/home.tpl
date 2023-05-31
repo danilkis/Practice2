@@ -58,5 +58,8 @@
 
         </div>
     </main>
+    <footer>
+        <p>ФСПО ГУАП &copy; 2023</p>
+    </footer>
 </body>
 </html>

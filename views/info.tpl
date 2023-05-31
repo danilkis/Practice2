@@ -15,6 +15,11 @@
   <header>
     <h1>Информация</h1>
   </header>
+  <div class="button-row">
+      <button onclick="scrollToInfo1()" class="goto_button">Вычисления в графах</button>
+      <button onclick="scrollToInfo2()" class="goto_button">Построение по заданным графам</button>
+      <button onclick="scrollToInfo3()" class="goto_button">Поиск по заданным графам</button>
+  </div>
   <div class="informat">
   <p>
      На сайте решаются некоторые задачи с неориентированными графами.<br> 
@@ -32,11 +37,6 @@
      - всех правильных графов из N вершин.<br>
   </p>
   </div>
-  <div class="panel">
-  <button onclick="scrollToInfo1()" style="display: block;">Вычисления в графах</button>
-  <button onclick="scrollToInfo2()" style="display: block;">Построение по заданным графам</button>
-  <button onclick="scrollToInfo3()" style="display: block;">Поиск по заданным графам</button>
-</div>
   <!-- Добавляем якорные ссылки для перемещения -->
   <div id="info1" class="info-section">
     <p>

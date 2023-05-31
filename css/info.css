@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #181D27;
-    color: white;
+    color: black;
     margin: 0;
     padding: 20px;
 }
@@ -33,54 +33,58 @@ h1 {
 
 .informat {
     display: inline-block;
-    background-color: #254D32;
-    text-align: left;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    vertical-align: top;
-    font-size: 24px; /* Изменение размера текста */
-    line-height: 1.4;
-}
-.panel {
-    display: inline-block;
-    padding: 15px;
+    background: linear-gradient(to top left, #69B578, #5BC0EB);
     border-radius: 20px;
-    text-decoration: none;
-    background-color: #254D32;
-    font-family: "Google Sans", sans-serif;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    
-}
-    .panel button {
-        display: block;
-        margin-bottom: 10px; /* Отступ между кнопками */
-        font-size: 16px; /* Размер текста кнопки */
-        padding: 8px 16px; /* Внутренний отступ кнопки */
-        border: none;
-        background-color: #254D32;
-        color: white;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-.info-section {
-    display: block;
-    width: calc(50% - 20px);
-    background-color: #254D32;
     text-align: left;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
+    padding: 10px;
     box-sizing: border-box;
     vertical-align: top;
-    font-size: 18px;
+    font-size: 24px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     line-height: 1.4;
+}
+.info-section {
+      display: inline-block;
+      background: linear-gradient(to bottom right, #D0DB97, #69B578);
+      border-radius: 20px;
+      margin: 20px;
+      padding: 10px;
+        width: calc(50% - 20px);
+        text-align: left;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        vertical-align: top;
+        font-size: 18px;
+        line-height: 1.4;
 }
     .info-section p {
+        color: black;
         margin-bottom: 10px;
     }
+.goto_button {
+    background: linear-gradient(to bottom right, #D0DB97, #69B578);
+  font-family: 'Roboto', sans-serif;
+  font-weight: initial;
+  width: 200px;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-row {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  margin: 25px;
+}
+
+.goto_button:hover {
+  background-color: #cccccc;
+  color: #ffffff;
+}
