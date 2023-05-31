@@ -43,6 +43,11 @@ def about():
 
     message = " "
     return template('about', message=message)
+@route('/info')
+def info():
+
+    message = " "
+    return template('info', message=message)
 
 # Run the web application
 if __name__ == '__main__':

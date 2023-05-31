@@ -12,6 +12,7 @@
 <body>
     <div id="topbar">
         <img src="/image/Logo.png" alt="Logo">
+        <a href="/info">Информация</a>
         <a href="/about">О нас</a>
     </div>
     <header>
