@@ -40,9 +40,11 @@
             <div class="image_grid">
                 <div class="creator">
                     <img src="/graphs_images/graph.png" alt="Граф 1">
+                    <p>Граф 1</p>
                 </div>
                 <div class="creator">
                     <img src="/graphs_images/graph.png" alt="Граф 2">
+                    <p>Граф 2</p>
                 </div>
             </div>
         </div>

@@ -179,7 +179,8 @@ input[type="number"] {
   grid-gap: 5px;
   justify-content: center;
   justify-self: center;
-  margin: 25px;
+  margin: 30px;
+  padding-left: 30px;
   margin-top: 20px;
   transform: scale(1.20);
 }
@@ -193,26 +194,22 @@ input[type="number"] {
 
 .creator {
     display: inline-block;
-    width: calc(33.33% - 20px);
-    background-color: #254D32;
+    background-image: linear-gradient(to top left, #69B578, #5BC0EB);
+    blur: 40px;
     text-align: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     box-sizing: border-box;
     vertical-align: top;
 }
-
-    .creator img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-
+.creator p {
+  margin: 5px;
+  color: #000000;
+}
 .main_page {
+  padding: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -220,4 +217,8 @@ input[type="number"] {
 {
     display: grid;
     align-items: center;
+}
+.image_grid img {
+  border-radius: 3%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
