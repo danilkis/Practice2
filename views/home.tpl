@@ -19,24 +19,27 @@
         <h1>Решение графов</h1>
     </header>
     <main>
-        <h2>Количество вершин</h2>
-        <input type="number" id="numFields" onchange="updateInputFields()" />
-        <h2>Матрица смежности вершин 1</h2>
-        <div id="gridContainer1" class="grid-container">
-            <!-- Grid 1 will be dynamically generated here -->
-        </div>
-        <h2>Матрица смежности вершин 2</h2>
-        <div id="gridContainer2" class="grid-container">
-            <!-- Grid 2 will be dynamically generated here -->
-        </div>
-        <div class="button-row">
-        <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Рассчитать</button>
-        <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Рассчитать 1</button>
-        <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
-        </div>
-
-        <div class="creator">
-            <img src="/image/avabresh.png" alt="Брешенков Артём">
+            <h2>Количество вершин</h2>
+            <div class="main_page">
+                <div id="headings">
+                <input type="number" id="numFields" onchange="updateInputFields()" />
+                <h2>Матрица смежности вершин 1</h2>
+                <div id="gridContainer1" class="grid-container">
+                <!-- Grid 1 will be dynamically generated here -->
+                </div>
+                <h2>Матрица смежности вершин 2</h2>
+                <div id="gridContainer2" class="grid-container">
+                <!-- Grid 2 will be dynamically generated here -->
+                </div>
+                <div class="button-row">
+                <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Рассчитать</button>
+                <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Рассчитать 1</button>
+                <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
+                </div>
+            </div>
+            <div class="creator">
+                <img src="/image/avabresh.png" alt="Брешенков Артём">
+            </div>
         </div>
     </main>
 </body>
