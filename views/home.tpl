@@ -12,16 +12,15 @@
 <body>
     <div id="topbar">
         <img src="/image/Logo.png" alt="Logo">
-        <a href="/">Главная</a>
         <a href="/about">О нас</a>
     </div>
     <header>
         <h1>Решение графов</h1>
     </header>
     <main>
-            <h2>Количество вершин</h2>
             <div class="main_page">
                 <div id="headings">
+                <h2>Количество вершин</h2>
                 <input type="number" id="numFields" onchange="updateInputFields()" />
                 <h2>Матрица смежности вершин 1</h2>
                 <div id="gridContainer1" class="grid-container">
@@ -38,15 +37,24 @@
                 </div>
             </div>
             <div class="image_grid">
+            <h2>Построенные графы</h2>
                 <div class="creator">
                     <img src="/graphs_images/graph.png" alt="Граф 1">
-                    <p>Граф 1</p>
                 </div>
                 <div class="creator">
                     <img src="/graphs_images/graph.png" alt="Граф 2">
-                    <p>Граф 2</p>
                 </div>
             </div>
+            <div class="image_grid">
+            <h2>Результирующие графы</h2>
+                <div class="creator">
+                    <img src="/graphs_images/graph.png" alt="Граф 1">
+                </div>
+                <div class="creator">
+                    <img src="/graphs_images/graph.png" alt="Граф 2">
+                </div>
+            </div>
+
         </div>
     </main>
 </body>

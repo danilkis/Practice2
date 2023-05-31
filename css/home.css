@@ -179,10 +179,10 @@ input[type="number"] {
   grid-gap: 5px;
   justify-content: center;
   justify-self: center;
-  margin: 30px;
+  margin: 15px;
   padding-left: 30px;
   margin-top: 20px;
-  transform: scale(1.20);
+  transform: scale(1.1);
 }
 
 .grid-item {
@@ -193,32 +193,31 @@ input[type="number"] {
 }
 
 .creator {
-    display: inline-block;
-    background-image: linear-gradient(to top left, #69B578, #5BC0EB);
-    blur: 40px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    vertical-align: top;
+  display: inline-block;
+  background: linear-gradient(to top left, #69B578, #5BC0EB);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
 }
+
 .creator p {
-  margin: 5px;
-  color: #000000;
+    margin: 5px;
+    color: #000000;
 }
+
 .main_page {
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.image_grid
-{
+
+.image_grid {
     display: grid;
     align-items: center;
 }
+
 .image_grid img {
-  border-radius: 3%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    border-radius: 3%;
+    scale: 95%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
