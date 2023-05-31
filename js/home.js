@@ -3,8 +3,8 @@ function updateInputFields() {
     var numFields = parseInt(document.getElementById('numFields').value);
 
     // Ограничение допустимого значения
-    var min = 1;
-    var max = 10;
+    var min = 2;
+    var max = 6;
     if (numFields < min) {
         numFields = min;
     } else if (numFields > max) {
