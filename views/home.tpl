@@ -38,20 +38,20 @@
                 </div>
             </div>
             <div class="image_grid">
-            <h2>Построенные графы</h2>
-                <div class="creator">
+            <h2>Исходные графы</h2>
+                <div class="graphs">
                     <img src="/graphs_images/graph.png" alt="Граф 1">
                 </div>
-                <div class="creator">
+                <div class="graphs">
                     <img src="/graphs_images/graph.png" alt="Граф 2">
                 </div>
             </div>
             <div class="image_grid">
             <h2>Результирующие графы</h2>
-                <div class="creator">
+                <div class="graphs_result">
                     <img src="/graphs_images/graph.png" alt="Граф 1">
                 </div>
-                <div class="creator">
+                <div class="graphs_result">
                     <img src="/graphs_images/graph.png" alt="Граф 2">
                 </div>
             </div>

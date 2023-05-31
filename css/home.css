@@ -120,7 +120,7 @@ h2 {
 /* Arrange buttons in a row */
 .button-row {
   display: flex;
-  justify-content: left;
+  justify-content: center; /* Update justify-content property */
   gap: 10px;
   margin: 25px;
 }
@@ -129,6 +129,7 @@ h2 {
 button.count-button {
   font-family: 'Roboto', sans-serif;
   font-weight: initial;
+  width: 110px; /* Add fixed width to the buttons */
   font-size: 16px;
   padding: 15px;
   border-radius: 20px;
@@ -162,6 +163,7 @@ button.count-button:focus {
 }
 
 input[type="number"] {
+  width: 30px;
   border-radius: 10px;
   background-color: #D0DB97;
   padding: 5px;
@@ -176,7 +178,7 @@ input[type="number"] {
   display: grid;
   align-self: center;
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  grid-gap: 5px;
+  grid-gap: 3px;
   justify-content: center;
   justify-self: center;
   margin: 15px;
@@ -192,19 +194,20 @@ input[type="number"] {
   justify-self: center;
 }
 
-.creator {
+.graphs {
   display: inline-block;
   background: linear-gradient(to top left, #69B578, #5BC0EB);
   border-radius: 20px;
   margin: 20px;
   padding: 10px;
 }
-
-.creator p {
-    margin: 5px;
-    color: #000000;
+.graphs_result {
+  display: inline-block;
+  background: linear-gradient(to bottom left, #69B578, #DAC4F7);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
 }
-
 .main_page {
     padding: 5px;
     display: grid;
