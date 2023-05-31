@@ -1,5 +1,17 @@
 function updateInputFields() {
+    var numFieldsInput = document.getElementById('numFields');
     var numFields = parseInt(document.getElementById('numFields').value);
+
+    // Ограничение допустимого значения
+    var min = 1;
+    var max = 10;
+    if (numFields < min) {
+        numFields = min;
+    } else if (numFields > max) {
+        numFields = max;
+    }
+    numFieldsInput.value = numFields;
+
     var gridContainer1 = document.getElementById('gridContainer1');
     var gridContainer2 = document.getElementById('gridContainer2');
     gridContainer1.innerHTML = ''; // Clear existing grid 1
@@ -52,6 +64,8 @@ function saveMatrices() {
             var gridRow = gridContainer1.getElementsByClassName('grid-row')[i];
             var checkboxes = gridRow.getElementsByTagName('input');
             row.push(checkboxes[j].checked ? 1 : 0);
+
+
         }
         matrix1.push(row);
     }
