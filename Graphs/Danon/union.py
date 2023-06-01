@@ -26,23 +26,8 @@ def create_union_graph(matrix1, matrix2):
             if matrix2[i][j] == 1:
                 union_graph.add_edge(i + 1, j + 1)
 
-    return union_graph
-
-# Example matrices
-matrix1 = [[0, 1, 1, 0],
-           [1, 0, 1, 1],
-           [1, 1, 0, 1],
-           [0, 1, 1, 0]]
-matrix2 = [[0, 1, 0, 1],
-           [1, 0, 1, 0],
-           [0, 1, 0, 1],
-           [1, 0, 1, 0]]
-
-# Create the union graph
-union_graph = create_union_graph(matrix1, matrix2)
-
-# Plot the graph
-pos = nx.spring_layout(union_graph)
-nx.draw_networkx(union_graph, pos)
-plt.title('Объединение')
-plt.show()
+    pos = nx.spring_layout(union_graph)
+    nx.draw_networkx(union_graph, pos)
+    plt.title('Объединение')
+    plt.savefig('graphs_images/graph_result_1.png')
+    plt.clf()  # Чистим фигуру

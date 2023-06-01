@@ -32,24 +32,24 @@
                 <!-- Grid 2 will be dynamically generated here -->
                 </div>
                 <div class="button-row">
-                <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Рассчитать</button>
-                <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Рассчитать 1</button>
-                <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Рассчитать 2</button>
+                <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Вычислениe</button>
+                <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Построение</button>
+                <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Поиск</button>
                 </div>
             </div>
             <div class="image_grid">
             <h2>Исходные графы</h2>
                 <div class="graphs">
-                    <img src="/graphs_images/graph.png" alt="Граф 1">
+                    <img src="/graphs_images/graph_source_1.png" alt="Граф 1">
                 </div>
                 <div class="graphs">
-                    <img src="/graphs_images/graph.png" alt="Граф 2">
+                    <img src="/graphs_images/graph_source_2.png" alt="Граф 2">
                 </div>
             </div>
             <div class="image_grid">
             <h2>Результирующие графы</h2>
                 <div class="graphs_result">
-                    <img src="/graphs_images/graph.png" alt="Граф 1">
+                    <img src="/graphs_images/graph_result_1.png" alt="Граф 1">
                 </div>
                 <div class="graphs_result">
                     <img src="/graphs_images/graph.png" alt="Граф 2">

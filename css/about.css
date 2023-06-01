@@ -78,3 +78,13 @@ a {
         vertical-align: middle;
         margin-right: 5px;
     }
+footer {
+            background-color: #254D32;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        footer p {
+            margin: 0;
+        }

@@ -93,11 +93,16 @@ function saveMatrices() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log('Request successful');
+            window.location.reload();
             // Handle the response if needed
         }
     };
 
     xhr.send(JSON.stringify({ matrix1: jsonMatrix1, matrix2: jsonMatrix2 }));
+}
+function countButton() {
+    saveMatrices(); // Call the saveMatrices() function for the first button
+    // Additional code for the first button...
 }
 
 function countButton1() {

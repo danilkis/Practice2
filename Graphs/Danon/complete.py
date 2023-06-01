@@ -1,8 +1,9 @@
+import os
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 
-def draw_graph(matrix_str):
+def draw_graph_complete(matrix_str):
     # Определяем граф
     matrix = np.array(eval(matrix_str))
     G1 = nx.Graph()
@@ -21,12 +22,72 @@ def draw_graph(matrix_str):
     if missing_edge is not None:
         G1.add_edge(*missing_edge)
 
-    # Отображаем диаграмму данных графа
-    nx.draw(G1, with_labels=True)
+    # Создаем директорию для сохранения изображения
+    os.makedirs('graphs_images', exist_ok=True)
 
-    # Сохраняем диаграмму в файл формата PNG
-    plt.savefig('graph.png')
+    # Отображаем диаграмму данных графа
+    pos = nx.spring_layout(G1)
+    nx.draw_networkx(G1, pos)
+    plt.title('Дополнение')
+    plt.savefig('graphs_images/graph_result_1.png')
     plt.clf()  # Чистим фигуру
 
-# Пример использования функции
+def create_intersection_graph(matrix_str1, matrix_str2): #todo: Посмотреть что тут
+    # Create empty intersection graph
+    matrix1 = np.array(eval(matrix_str1))
+    matrix2 = np.array(eval(matrix_str2))
+    intersection_graph = nx.Graph()
+
+    # Add nodes from matrix1 that also exist in matrix2
+    for i in range(len(matrix1)):
+        if i + 1 not in intersection_graph.nodes():
+            intersection_graph.add_node(i + 1)
+
+    # Add edges that exist in both matrix1 and matrix2
+    for i in range(len(matrix1)):
+        for j in range(i + 1, len(matrix1)):
+            if matrix1[i][j] == 1 and matrix2[i][j] == 1:
+                intersection_graph.add_edge(i + 1, j + 1)
+
+    pos = nx.spring_layout(intersection_graph)
+    nx.draw_networkx(intersection_graph, pos)
+    plt.title('Пересечение')
+    plt.savefig('graphs_images/graph_result_2.png')
+    plt.clf()  # Чистим фигуру
+import matplotlib.pyplot as plt
+import networkx as nx
+
+def create_union_graph(matrix_str1, matrix_str2):
+    # Create empty union graph
+    matrix1 = np.array(eval(matrix_str1))
+    matrix2 = np.array(eval(matrix_str2))
+    union_graph = nx.Graph()
+
+    # Add nodes from matrix1
+    for i in range(len(matrix1)):
+        union_graph.add_node(i + 1)
+
+    # Add edges from matrix1
+    for i in range(len(matrix1)):
+        for j in range(i + 1, len(matrix1)):
+            if matrix1[i][j] == 1:
+                union_graph.add_edge(i + 1, j + 1)
+
+    # Add nodes from matrix2
+    for i in range(len(matrix2)):
+        if i + 1 not in union_graph.nodes():
+            union_graph.add_node(i + 1)
+
+    # Add edges from matrix2
+    for i in range(len(matrix2)):
+        for j in range(i + 1, len(matrix2)):
+            if matrix2[i][j] == 1:
+                union_graph.add_edge(i + 1, j + 1)
+
+    pos = nx.spring_layout(union_graph)
+    nx.draw_networkx(union_graph, pos)
+    plt.title('Объединение')
+    plt.savefig('graphs_images/graph_result_3.png')
+    plt.clf()  # Чистим фигуру
+
 

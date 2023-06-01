@@ -1,6 +1,7 @@
 from bottle import route, run, template, static_file, request, view
 
-from Graphs.Danon.complete import draw_graph
+from Graphs.Danon.complete import draw_graph_complete
+from Graphs.Danon.make import draw_graphs
 
 
 @route('/static/<filename:path>')
@@ -15,13 +16,10 @@ def home():
 @route('/', method='POST')
 def handle_post():
     data = request.json
-
     # Retrieve the matrices from the request data
     matrix1 = data.get('matrix1')
     matrix2 = data.get('matrix2')
-    print(draw_graph(matrix1))
-    print(matrix2)
-
+    draw_graphs(matrix1,matrix2)
 @route('/css/<filename>')
 def server_static(filename):
     return static_file(filename, root='./css')
