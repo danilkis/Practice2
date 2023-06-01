@@ -4,7 +4,7 @@ function updateInputFields() {
 
     // Ограничение допустимого значения
     var min = 2;
-    var max = 6;
+    var max = 10;
     if (numFields < min) {
         numFields = min;
     } else if (numFields > max) {
