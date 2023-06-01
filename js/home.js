@@ -41,7 +41,7 @@ function updateInputFields() {
 
             // Assign checkbox IDs
             checkbox1.id = i + " " + j;
-            checkbox2.id = i + " " + j;
+            checkbox2.id = i + " " + j + "grid2"; // Add "_2" to the ID of checkboxes in the second grid
 
             gridItem1.appendChild(checkbox1);
             gridRow1.appendChild(gridItem1);
@@ -69,10 +69,18 @@ function addCheckboxEventListeners() {
 function checkRelatedCheckboxes(checkbox) {
     var checkboxId = checkbox.id.split(" ");
     var mirroredId = checkboxId[1] + " " + checkboxId[0];
-    var mirroredCheckbox = document.getElementById(mirroredId);
 
-    mirroredCheckbox.checked = checkbox.checked;
+    var isCheckboxInSecondGrid = checkbox.id.endsWith("_2");
+    var mirroredCheckboxId = isCheckboxInSecondGrid ? mirroredId + "_2" : mirroredId;
+
+    var mirroredCheckbox = document.getElementById(mirroredCheckboxId);
+
+    if (mirroredCheckbox) {
+        mirroredCheckbox.checked = checkbox.checked;
+    }
 }
+
+
 
 
 
