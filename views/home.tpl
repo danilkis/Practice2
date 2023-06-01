@@ -36,6 +36,9 @@
                 <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Построение</button>
                 <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Поиск</button>
                 </div>
+                <div>
+                {{message}}
+                </div>
             </div>
             <div class="image_grid">
             <h2>Исходные графы</h2>

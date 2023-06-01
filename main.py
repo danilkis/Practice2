@@ -1,3 +1,4 @@
+
 from bottle import route, run, template, static_file, request, view
 
 from Graphs.Danon.complete import draw_graph_complete, create_intersection_graph
@@ -28,9 +29,15 @@ def handle_post():
     matrix2 = data.get('matrix2')
     draw_graph_complete(matrix1)
     create_intersection_graph(matrix1, matrix2)
+    message = draw_graphs(matrix1,matrix2)
+    print(message)
+    return template('home', message=message)
+
+
 @route('/css/<filename>')
 def server_static(filename):
     return static_file(filename, root='./css')
+
 @route('/graphs_images/<filename>')
 def server_static(filename):
     return static_file(filename, root='./graphs_images')
