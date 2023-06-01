@@ -20,7 +20,7 @@ function updateInputFields() {
     for (var i = 0; i < numFields; i++) {
         var gridRow1 = document.createElement('div');
         var gridRow2 = document.createElement('div');
-        gridRow1.className = 'grid-row'; //TODO: Симетричные включения
+        gridRow1.className = 'grid-row';
         gridRow2.className = 'grid-row';
 
         for (var j = 0; j < numFields; j++) {
@@ -39,6 +39,10 @@ function updateInputFields() {
                 checkbox2.disabled = true;
             }
 
+            // Assign checkbox IDs
+            checkbox1.id = i + " " + j;
+            checkbox2.id = i + " " + j;
+
             gridItem1.appendChild(checkbox1);
             gridRow1.appendChild(gridItem1);
             gridItem2.appendChild(checkbox2);
@@ -48,7 +52,31 @@ function updateInputFields() {
         gridContainer1.appendChild(gridRow1);
         gridContainer2.appendChild(gridRow2);
     }
+
+    // Add event listeners to checkboxes
+    addCheckboxEventListeners();
 }
+
+function addCheckboxEventListeners() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            checkRelatedCheckboxes(checkbox);
+        });
+    });
+}
+
+function checkRelatedCheckboxes(checkbox) {
+    var checkboxId = checkbox.id.split(" ");
+    var mirroredId = checkboxId[1] + " " + checkboxId[0];
+    var mirroredCheckbox = document.getElementById(mirroredId);
+
+    mirroredCheckbox.checked = checkbox.checked;
+}
+
+
+
+
 
 function saveMatrices() {
     var gridContainer1 = document.getElementById('gridContainer1');
@@ -100,6 +128,9 @@ function saveMatrices() {
 
     xhr.send(JSON.stringify({ matrix1: jsonMatrix1, matrix2: jsonMatrix2 }));
 }
+
+
+
 function countButton() {
     saveMatrices(); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
