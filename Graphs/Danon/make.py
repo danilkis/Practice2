@@ -35,6 +35,7 @@ def draw_graphs(matrix_str1, matrix_str2):
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()  # Чистим фигуру
 
+    print(matrix1)
     # Определяем число ребер в каждом графе
     num_edges_G1 = G1.number_of_edges()
     num_edges_G2 = G2.number_of_edges()
@@ -46,6 +47,10 @@ def draw_graphs(matrix_str1, matrix_str2):
     num_isolated_subgraphs = nx.number_connected_components(G1)
     print("Число изолированных подграфов в графе G1: ", num_isolated_subgraphs)
 
-    # Определяем диаметр второго графа
-    diameter_G2 = nx.diameter(G2)
-    print("Диаметр графа G2: ", diameter_G2)
+    # Проверяем, является ли второй граф связным
+    if nx.is_connected(G2):
+        # Определяем диаметр второго графа
+        diameter_G2 = nx.diameter(G2)
+        print("Диаметр графа G2: ", diameter_G2)
+    else:
+        print("Второй граф не является связным.")

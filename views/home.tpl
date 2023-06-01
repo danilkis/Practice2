@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="loadSavedData()">
     <div id="topbar">
         <img src="/image/Logo.png" alt="Logo">
         <a href="/info">Информация</a>
@@ -22,7 +22,7 @@
             <div class="main_page">
                 <div id="headings">
                 <h2>Количество вершин</h2>
-                <input type="number" id="numFields" min="2" max="6" onchange="updateInputFields()" />
+                <input type="number" id="numFields" min="2" max="10" onchange="updateInputFields()" />
                 <h2>Матрица смежности вершин 1</h2>
                 <div id="gridContainer1" class="grid-container">
                 <!-- Grid 1 will be dynamically generated here -->
@@ -32,7 +32,7 @@
                 <!-- Grid 2 will be dynamically generated here -->
                 </div>
                 <div class="button-row">
-                <button id="count"  class="count-button button-gradient" onclick="saveMatrices()">Вычислениe</button>
+                <button id="count"  class="count-button button-gradient" onclick="countButton()">Вычислениe</button>
                 <button id="count1" class="count-button button-gradient1" onclick="countButton1()">Построение</button>
                 <button id="count2" class="count-button button-gradient2" onclick="countButton2()">Поиск</button>
                 </div>
@@ -52,7 +52,7 @@
                     <img src="/graphs_images/graph_result_1.png" alt="Граф 1">
                 </div>
                 <div class="graphs_result">
-                    <img src="/graphs_images/graph.png" alt="Граф 2">
+                    <img src="/graphs_images/graph_result_2.png" alt="Граф 2">
                 </div>
             </div>
 

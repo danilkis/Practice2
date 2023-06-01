@@ -55,6 +55,7 @@ function updateInputFields() {
 
     // Add event listeners to checkboxes
     addCheckboxEventListeners();
+    localStorage.setItem('numFields', numFields);
 }
 
 function addCheckboxEventListeners() {
@@ -62,7 +63,32 @@ function addCheckboxEventListeners() {
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
             checkRelatedCheckboxes(checkbox);
+            var gridContainerIndex = checkbox.id.endsWith("_2") ? 'gridContainer2' : 'gridContainer1';
+            // Save the checkbox state to localStorage with grid container index and checkbox id as the key
+            localStorage.setItem(gridContainerIndex + ':' + checkbox.id, checkbox.checked);
         });
+    });
+}
+
+function loadSavedData() {
+    // Load the previously entered number of fields from localStorage
+    var numFields = localStorage.getItem('numFields');
+    if (numFields) {
+        document.getElementById('numFields').value = numFields;
+        updateInputFields();
+    }
+
+    // Load the checkbox states from localStorage
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        // Get the grid container index
+        var gridContainerIndex = checkbox.id.endsWith("_2") ? 'gridContainer2' : 'gridContainer1';
+
+        // Get the checkbox state from localStorage using grid container index and checkbox id as the key
+        var checkboxState = localStorage.getItem(gridContainerIndex + ':' + checkbox.id);
+        if (checkboxState) {
+            checkbox.checked = checkboxState === 'true';
+        }
     });
 }
 
@@ -86,7 +112,7 @@ function checkRelatedCheckboxes(checkbox) {
 
 
 
-function saveMatrices() {
+function saveMatrices(url) {
     var gridContainer1 = document.getElementById('gridContainer1');
     var gridContainer2 = document.getElementById('gridContainer2');
     var numFields = parseInt(document.getElementById('numFields').value);
@@ -123,7 +149,7 @@ function saveMatrices() {
 
     // Make the POST request
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/', true);
+    xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onreadystatechange = function () {
@@ -140,16 +166,16 @@ function saveMatrices() {
 
 
 function countButton() {
-    saveMatrices(); // Call the saveMatrices() function for the first button
+    saveMatrices('/build'); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
 }
 
 function countButton1() {
-    saveMatrices(); // Call the saveMatrices() function for the first button
+    saveMatrices('/operations'); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
 }
 
 function countButton2() {
-    saveMatrices(); // Call the saveMatrices() function for the second button
+    saveMatrices('/find'); // Call the saveMatrices() function for the second button
     // Additional code for the second button...
 }
