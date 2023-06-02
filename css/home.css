@@ -225,3 +225,27 @@ input[type="number"] {
     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
 
+.var1 {
+    display: inline-block;
+    width: 500px;
+    background-image: linear-gradient(to top left, #69B578, #D0DB97);
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+    .var1 p {
+        color: #000000;
+    }
+
+    .var1 h2 {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        margin: 10px;
+    }
+
