@@ -67,6 +67,14 @@ function updateInputFields() {
       if (checkbox1.checked) {
         checkRelatedCheckboxes(checkbox1);
       }
+      if (storedCheckboxStates[checkbox2.id] !== undefined) {
+        checkbox2.checked = storedCheckboxStates[checkbox2.id];
+      }
+
+      // Call checkRelatedCheckboxes if checkbox is checked
+      if (checkbox2.checked) {
+        checkRelatedCheckboxes(checkbox2);
+      }
     }
 
     gridContainer1.appendChild(gridRow1);
@@ -106,12 +114,12 @@ function loadSavedData() {
   checkboxes.forEach(function(checkbox) {
     // Get the grid container index
     var gridContainerIndex = checkbox.id.endsWith("_2") ? 'gridContainer1' : 'gridContainer2';
-
     // Get the checkbox state from localStorage using grid container index and checkbox id as the key
     var checkboxState = localStorage.getItem(checkbox.id);
     if (checkboxState) {
       checkbox.checked = checkboxState === 'true';
     }
+    checkRelatedCheckboxes(checkbox)
   });
 }
 
