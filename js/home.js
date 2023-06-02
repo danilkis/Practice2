@@ -172,3 +172,36 @@ function countButton2() {
     saveMatrices('/find'); // Call the saveMatrices() function for the second button
     // Additional code for the second button...
 }
+
+
+//картинки скрыть, очистить locale storage
+function allClear() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false; // Сбросить состояние флажка на false
+    });
+
+    var graphSource1 = document.getElementById('graph_source_1');
+    var graphSource2 = document.getElementById('graph_source_2');
+    var graphResult1 = document.getElementById('graph_result_1');
+    var graphResult2 = document.getElementById('graph_result_2');
+
+    graphSource1.src = "/graphs_images/WhiteFon.png"; // Замените пустой строкой, чтобы удалить изображение
+    graphSource2.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
+    graphResult1.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
+    graphResult2.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
+
+    var messageElement = document.getElementById('message');
+    messageElement.textContent = ''; // Очистка содержимого элемента
+
+    var numFields = document.getElementById('numFields');
+    numFields.value = ''; // Очистка значения элемента input
+
+    var gridContainer1 = document.getElementById('gridContainer1');
+    gridContainer1.innerHTML = ''; // Очистка содержимого контейнера
+
+    var gridContainer2 = document.getElementById('gridContainer2');
+    gridContainer2.innerHTML = ''; // Очистка содержимого контейнера
+
+    localStorage.clear(); // Очистка localStorage
+}

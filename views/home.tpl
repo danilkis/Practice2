@@ -19,10 +19,13 @@
         <h1>Решение графов</h1>
     </header>
     <main>
+            <!-- Посомотреть изменения артема-->
             <div class="main_page">
                 <div id="headings">
                 <h2>Количество вершин</h2>
                 <input type="number" id="numFields" min="2" max="10" onchange="updateInputFields()" />
+                <button id="Clear" class="button-gradient" onclick="allClear()">Очистить</button>
+         
                 <h2>Матрица смежности вершин 1</h2>
                 <div id="gridContainer1" class="grid-container">
                 <!-- Grid 1 will be dynamically generated here -->
@@ -41,19 +44,19 @@
             <div class="image_grid">
             <h2>Исходные графы</h2>
                 <div class="graphs">
-                    <img src="/graphs_images/graph_source_1.png" alt="Граф 1">
+                    <img id="graph_source_1"  src="/graphs_images/graph_source_1.png" alt="Граф 1">
                 </div>
                 <div class="graphs">
-                    <img src="/graphs_images/graph_source_2.png" alt="Граф 2">
+                    <img id="graph_source_2" src="/graphs_images/graph_source_2.png" alt="Граф 2">
                 </div>
             </div>
             <div class="image_grid">
             <h2>Результирующие графы</h2>
                 <div class="graphs_result">
-                    <img src="/graphs_images/graph_result_1.png" alt="Граф 1">
+                    <img id="graph_result_1" src="/graphs_images/graph_result_1.png" alt="Граф 1">
                 </div>
                 <div class="graphs_result">
-                    <img src="/graphs_images/graph_result_2.png" alt="Граф 2">
+                    <img id="graph_result_2" src="/graphs_images/graph_result_2.png" alt="Граф 2">
                 </div>
             </div>
         </div>
