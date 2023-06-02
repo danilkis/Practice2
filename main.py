@@ -5,6 +5,7 @@ from Graphs.Danon.complete import draw_graph_complete, create_intersection_graph
 from Graphs.Danon.make import draw_graphs
 message = []
 @route('/static/<filename:path>')
+
 def send_static(filename):
     return static_file(filename, root='./static')
 

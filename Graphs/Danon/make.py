@@ -37,6 +37,8 @@ def draw_graphs(matrix_str1, matrix_str2):
 ]
 
 
+
+
     if nx.is_connected(G1):
         diameter_G1 = nx.diameter(G1)
         message.append(f"Диаметр графа G1: {diameter_G1}")
@@ -60,5 +62,10 @@ def draw_graphs(matrix_str1, matrix_str2):
     plt.title('Граф 2')
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()
+
+    with open('message_log.txt', 'a') as file:
+        # Записать содержимое переменной message в файл
+        file.write('\n'.join(message))
+        file.write('\n' + '-' * 60 + '\n')
 
     return message
