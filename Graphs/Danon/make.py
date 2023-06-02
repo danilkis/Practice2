@@ -30,10 +30,12 @@ def draw_graphs(matrix_str1, matrix_str2):
     num_edges_G2 = G2.number_of_edges()
     num_isolated_subgraphs = nx.number_connected_components(G1)
 
-    message = []
-    message.append(f"Число ребер в графе G1: {num_edges_G1}")
-    message.append(f"Число ребер в графе G2: {num_edges_G2}")
-    message.append(f"Число изолированных подграфов в графе G1: {num_isolated_subgraphs}")
+    message = [
+        f"Число ребер в графе G1: {num_edges_G1}",
+        f"Число ребер в графе G2: {num_edges_G2}",
+        f"Число изолированных подграфов в графе G1: {num_isolated_subgraphs}"
+]
+
 
     if nx.is_connected(G1):
         diameter_G1 = nx.diameter(G1)

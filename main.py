@@ -3,7 +3,7 @@ from bottle import route, run, template, static_file, request, view
 
 from Graphs.Danon.complete import draw_graph_complete, create_intersection_graph
 from Graphs.Danon.make import draw_graphs
-message = ""
+message = []
 @route('/static/<filename:path>')
 def send_static(filename):
     return static_file(filename, root='./static')
@@ -19,7 +19,7 @@ def handle_build():
     matrix1 = data.get('matrix1')
     matrix2 = data.get('matrix2')
     message = draw_graphs(matrix1,matrix2)
-    return template('home', message=str(message[1]))
+    return template('home', message=message)
 @route('/operations', method='POST')
 def handle_operations():
     data = request.json
