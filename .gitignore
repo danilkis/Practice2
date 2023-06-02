@@ -3,4 +3,7 @@
 ################################################################################
 
 /.vs
-Graphs/Danon/__pycache__
+/Graphs/Danon/__pycache__
+/graphs_images
+message_log.txt
+message.json
