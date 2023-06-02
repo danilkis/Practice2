@@ -77,7 +77,6 @@ function loadSavedData() {
         document.getElementById('numFields').value = numFields;
         updateInputFields();
     }
-
     // Load the checkbox states from localStorage
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(function(checkbox) {
@@ -105,11 +104,6 @@ function checkRelatedCheckboxes(checkbox) {
         mirroredCheckbox.checked = checkbox.checked;
     }
 }
-
-
-
-
-
 
 
 function saveMatrices(url) {
@@ -156,7 +150,6 @@ function saveMatrices(url) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log('Request successful');
             window.location.reload();
-            // Handle the response if needed
         }
     };
 
@@ -166,7 +159,7 @@ function saveMatrices(url) {
 
 
 function countButton() {
-    saveMatrices('/build'); // Call the saveMatrices() function for the first button
+    saveMatrices('/'); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
 }
 
