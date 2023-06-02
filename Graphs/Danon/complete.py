@@ -27,7 +27,7 @@ def draw_graph_complete(matrix_str):
 
     # Отображаем диаграмму данных графа
     pos = nx.spring_layout(G1)
-    nx.draw_networkx(G1, pos)
+    nx.draw_networkx(G1, pos,node_color='#D0DB97')
     plt.title('Дополнение')
     plt.savefig('graphs_images/graph_result_1.png')
     plt.clf()  # Чистим фигуру
@@ -50,7 +50,7 @@ def create_intersection_graph(matrix_str1, matrix_str2): #todo: Посмотре
                 intersection_graph.add_edge(i + 1, j + 1)
 
     pos = nx.spring_layout(intersection_graph)
-    nx.draw_networkx(intersection_graph, pos)
+    nx.draw_networkx(intersection_graph, pos,node_color='#D0DB97')
     plt.title('Пересечение')
     plt.savefig('graphs_images/graph_result_2.png')
     plt.clf()  # Чистим фигуру
@@ -85,7 +85,7 @@ def create_union_graph(matrix_str1, matrix_str2):
                 union_graph.add_edge(i + 1, j + 1)
 
     pos = nx.spring_layout(union_graph)
-    nx.draw_networkx(union_graph, pos)
+    nx.draw_networkx(union_graph, pos,node_color='#D0DB97')
     plt.title('Объединение')
     plt.savefig('graphs_images/graph_result_3.png')
     plt.clf()  # Чистим фигуру

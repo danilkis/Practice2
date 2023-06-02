@@ -52,13 +52,13 @@ def draw_graphs(matrix_str1, matrix_str2):
         message.append("Второй граф не является связным.")
 
     pos = nx.spring_layout(G1)
-    nx.draw_networkx(G1, pos)
+    nx.draw_networkx(G1, pos,node_color='#D0DB97')
     plt.title('Граф 1')
     plt.savefig('graphs_images/graph_source_1.png')
     plt.clf()
 
     pos = nx.spring_layout(G2)
-    nx.draw_networkx(G2, pos)
+    nx.draw_networkx(G2, pos,node_color='#D0DB97')
     plt.title('Граф 2')
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()

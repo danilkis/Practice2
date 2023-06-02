@@ -29,6 +29,8 @@ def handle_operations():
     matrix2 = data.get('matrix2')
     draw_graph_complete(matrix1)
     create_intersection_graph(matrix1, matrix2)
+    message = draw_graphs(matrix1, matrix2)
+    return template('home', message=message)
 @route('/css/<filename>')
 def server_static(filename):
     return static_file(filename, root='./css')
