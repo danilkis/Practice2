@@ -212,7 +212,7 @@ function countButton1() {
 function countButton2() {
     saveMatrices('/find'); // Call the saveMatrices() function for the second button
     // Additional code for the second button...
-    window.location.reload();
+    window.location.reload(true);
 }
 
 
@@ -248,4 +248,5 @@ function allClear() {
     gridContainer2.innerHTML = ''; // Очистка содержимого контейнера
 
     localStorage.clear(); // Очистка localStorage
+    window.location.reload(true);
 }
