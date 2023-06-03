@@ -63,18 +63,17 @@ def draw_graphs(matrix_str1, matrix_str2):
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()
 
-    with open('message_log.txt', 'a') as file:
-    # Проверить текущее количество строк в файле
-        file.seek(0)  # Перейти в начало файла
-        lines = file.readlines()  # Прочитать все строки
-        line_count = len(lines)  # Количество строк
+    with open('message_log.txt', 'r+') as file:
+    # Read all lines from the file
+        lines = file.readlines()
 
-    # Если достигнут предельный лимит строк (100), обнулить файл
-    if line_count >= 100:
-        file.truncate(0)  # Обнулить содержимое файла
+    # If the file has reached 100 lines, reset it
+        if len(lines) >= 100:
+            file.seek(0)
+            file.truncate()
 
-    # Записать содержимое переменной message в файл
-    file.write('\n'.join(message))
-    file.write('\n' + '-' * 60 + '\n')
+    # Write the contents of the 'message' variable to the file
+        file.write('\n'.join(message))
+        file.write('\n' + '-' * 60 + '\n')
 
     return message
