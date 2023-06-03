@@ -1,3 +1,5 @@
+import numpy as np
+#import make
 # Расчет степеней вершин
 def calculate_vertex_degrees(adj_matrix):
     degrees = []
@@ -32,3 +34,29 @@ def find_all_regular_graphs(N):
         return adj_matrix
     else:
         return None
+
+def Fill(matrix_str1,matrix_str2,N):
+    adj_matrix1 = np.array(eval(matrix_str1))
+    adj_matrix2 = np.array(eval(matrix_str2))
+
+    #make.draw_graphs(adj_matrix1, adj_matrix2)
+
+    degrees1 = calculate_vertex_degrees(adj_matrix1)
+    degrees2 = calculate_vertex_degrees(adj_matrix2)
+
+    message = [
+        f"Степень вершин в графе G1: {degrees1}",
+        f"Степень вершин в графе G2: {degrees2}",
+    ]
+
+
+
+    # 2) Поиск всех правильных графов из N вершин
+    regular_graphs = find_all_regular_graphs(N)
+
+    if regular_graphs:
+        message.append("Regular graph with", N, "vertices found:")
+    else:
+        message.append("No regular graph with", N, "vertices found.")
+
+    return message
