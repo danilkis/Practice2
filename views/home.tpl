@@ -25,7 +25,7 @@
                 <div id="headings">
                 <h2>Количество вершин</h2>
                 <input type="number" id="numFields" min="2" max="10" onchange="updateInputFields()" />
-                <button id="Clear" class="button-gradient" onclick="allClear()">Очистить</button>
+                <button id="Clear" class="clear-button" onclick="allClear()">Очистить</button>
          
                 <h2>Матрица смежности вершин 1</h2>
                 <div id="gridContainer1" class="grid-container">

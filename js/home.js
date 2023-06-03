@@ -227,11 +227,13 @@ function allClear() {
     var graphSource2 = document.getElementById('graph_source_2');
     var graphResult1 = document.getElementById('graph_result_1');
     var graphResult2 = document.getElementById('graph_result_2');
+    var graphResult3 = document.getElementById('graph_result_3');
 
     graphSource1.src = "/graphs_images/WhiteFon.png"; // Замените пустой строкой, чтобы удалить изображение
     graphSource2.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
     graphResult1.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
     graphResult2.src = '/graphs_images/WhiteFon.png'; // Замените пустой строкой, чтобы удалить изображение
+    graphResult3.src = '/graphs_images/WhiteFon.png';
 
     var messageElement = document.getElementById('message');
     messageElement.textContent = ''; // Очистка содержимого элемента

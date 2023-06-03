@@ -132,9 +132,26 @@ h2 {
 button.count-button {
   font-family: 'Roboto', sans-serif;
   font-weight: initial;
-  width: 110px; /* Add fixed width to the buttons */
+  width: 120px; /* Add fixed width to the buttons */
   font-size: 16px;
   padding: 15px;
+    text-align: center;
+  border-radius: 20px;
+  border: none;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+button.clear-button {
+  font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to bottom right, #B1CC74, #D0DB97);
+  font-weight: initial;
+  width: 80px; /* Add fixed width to the buttons */
+  font-size: 12px;
+  padding: 10px;
+    margin-left: 10px;
   border-radius: 20px;
   border: none;
   color: #000000;
