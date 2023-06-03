@@ -200,16 +200,19 @@ function saveMatrices(url) {
 function countButton() {
     saveMatrices('/'); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
+    window.location.reload();
 }
 
 function countButton1() {
     saveMatrices('/operations'); // Call the saveMatrices() function for the first button
     // Additional code for the first button...
+    window.location.reload();
 }
 
 function countButton2() {
     saveMatrices('/find'); // Call the saveMatrices() function for the second button
     // Additional code for the second button...
+    window.location.reload();
 }
 
 

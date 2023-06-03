@@ -8,30 +8,26 @@ def draw_graph_complete(matrix_str):
     matrix = np.array(eval(matrix_str))
     G1 = nx.Graph()
 
-    # Определяем индексы отсутствующего ребра
-    missing_edge = None
+    # Определяем индексы отсутствующих ребер
+    missing_edges = []
     for i in range(len(matrix)):
         for j in range(i + 1, len(matrix)):
             if matrix[i][j] == 0:
-                missing_edge = (i + 1, j + 1)
-                break
-        if missing_edge is not None:
-            break
+                missing_edges.append((i + 1, j + 1))
 
-    # Добавляем отсутствующее ребро в граф
-    if missing_edge is not None:
-        G1.add_edge(*missing_edge)
+    # Добавляем отсутствующие ребра в граф
+    if missing_edges:
+        G1.add_edges_from(missing_edges)
 
     # Создаем директорию для сохранения изображения
     os.makedirs('graphs_images', exist_ok=True)
 
     # Отображаем диаграмму данных графа
     pos = nx.spring_layout(G1)
-    nx.draw_networkx(G1, pos,node_color='#D0DB97')
+    nx.draw_networkx(G1, pos, node_color='#D0DB97')
     plt.title('Дополнение')
     plt.savefig('graphs_images/graph_result_1.png')
-    plt.clf()  # Чистим фигуру
-
+    plt.clf() # Чистим фигуру
 def create_intersection_graph(matrix_str1, matrix_str2): #todo: Посмотреть что тут
     # Create empty intersection graph
     matrix1 = np.array(eval(matrix_str1))

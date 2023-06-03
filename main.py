@@ -1,7 +1,7 @@
 import bottle
 from bottle import route, run, template, static_file, request, view
 
-from Graphs.Danon.complete import draw_graph_complete, create_intersection_graph
+from Graphs.Danon.complete import draw_graph_complete, create_intersection_graph, create_union_graph
 from Graphs.Danon.make import draw_graphs
 message = []
 @route('/static/<filename:path>')
@@ -27,6 +27,7 @@ def handle_operations():
     # Retrieve the matrices from the request data
     matrix1 = data.get('matrix1')
     matrix2 = data.get('matrix2')
+    create_union_graph(matrix1, matrix2)
     draw_graph_complete(matrix1)
     create_intersection_graph(matrix1, matrix2)
     message = draw_graphs(matrix1, matrix2)

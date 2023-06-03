@@ -61,10 +61,13 @@
             <div class="image_grid">
             <h2>Результирующие графы</h2>
                 <div class="graphs_result">
-                    <img id="graph_result_1" src="/graphs_images/graph_result_1.png" alt="Граф 1">
+                    <img id="graph_result_1" src="/graphs_images/graph_result_1.png" alt="Результат 1">
                 </div>
                 <div class="graphs_result">
-                    <img id="graph_result_2" src="/graphs_images/graph_result_2.png" alt="Граф 2">
+                    <img id="graph_result_2" src="/graphs_images/graph_result_2.png" alt="Результат 2">
+                </div>
+                <div class="graphs_result">
+                    <img id="graph_result_3" src="/graphs_images/graph_result_3.png" alt="Результат 3">
                 </div>
             </div>
         </div>

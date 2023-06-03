@@ -231,7 +231,7 @@ input[type="numberN"] {
 }
 
 .image_grid {
-    display: grid;
+    display: flow;
     align-items: center;
 }
 
