@@ -4,15 +4,15 @@ from matplotlib import pyplot as plt
 
 
 def draw_graphs(matrix_str1, matrix_str2):
-    G1 = nx.Graph()
+    G1 = nx.Graph() #Создает два графа G1 и G2 с использованием библиотеки NetworkX.
     G2 = nx.Graph()
-    matrix1 = np.array(eval(matrix_str1))
+    matrix1 = np.array(eval(matrix_str1)) #Преобразует строковые представления матриц смежности matrix_str1 и matrix_str2 в массивы NumPy с помощью eval.
     matrix2 = np.array(eval(matrix_str2))
 
-    G1.clear()
+    G1.clear() #Очищает графы G1 и G2.
     G2.clear()
 
-    # Add nodes and edges to each graph based on the adjacency matrix
+    # Добавляет узлы и ребра в каждый граф на основе матрицы смежности.
     for i in range(len(matrix1)):
         G1.add_node(i + 1)
         for j in range(i + 1, len(matrix1)):
@@ -25,10 +25,10 @@ def draw_graphs(matrix_str1, matrix_str2):
             if matrix2[i][j] == 1:
                 G2.add_edge(i + 1, j + 1)
 
-    # Display the graphs
+    # num_edges_G1 и num_edges_G2 - количество ребер в графах G1 и G2 соответственно.
     num_edges_G1 = G1.number_of_edges()
     num_edges_G2 = G2.number_of_edges()
-    num_isolated_subgraphs = nx.number_connected_components(G1)
+    num_isolated_subgraphs = nx.number_connected_components(G1) #num_isolated_subgraphs - количество изолированных подграфов в графе G1.
 
     message = [
         f"Число ребер в графе G1: {num_edges_G1}",
@@ -58,7 +58,7 @@ def draw_graphs(matrix_str1, matrix_str2):
     plt.clf()
 
     pos = nx.spring_layout(G2)
-    nx.draw_networkx(G2, pos,node_color='#D0DB97')
+    nx.draw_networkx(G2, pos,node_color='#D0DB97') #Рисует графы G1 и G2 с помощью nx.draw_networkx и сохраняет их в соответствующие файлы в папке "graphs_images".
     plt.title('Граф 2')
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()
