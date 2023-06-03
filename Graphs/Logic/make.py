@@ -1,6 +1,9 @@
 import networkx as nx
 import numpy as np
+import datetime
 from matplotlib import pyplot as plt
+
+
 
 
 def draw_graphs(matrix_str1, matrix_str2):
@@ -63,17 +66,21 @@ def draw_graphs(matrix_str1, matrix_str2):
     plt.savefig('graphs_images/graph_source_2.png')
     plt.clf()
 
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open('message_log.txt', 'r+') as file:
-    # Read all lines from the file
+        # Чтение всех строк из файла
         lines = file.readlines()
 
-    # If the file has reached 100 lines, reset it
+        # Если файл содержит 100 строк, сбросить его содержимое
         if len(lines) >= 100:
             file.seek(0)
             file.truncate()
 
-    # Write the contents of the 'message' variable to the file
-        file.write('\n'.join(message))
+        # Формирование строки для записи в файл (с добавлением времени)
+        log_line = f"{current_time} - {message}"
+
+        # Запись содержимого переменной 'log_line' в файл
+        file.write(log_line)
         file.write('\n' + '-' * 60 + '\n')
 
     return message
