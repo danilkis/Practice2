@@ -248,5 +248,4 @@ function allClear() {
     gridContainer2.innerHTML = ''; // Очистка содержимого контейнера
 
     localStorage.clear(); // Очистка localStorage
-    window.location.reload(true);
 }
