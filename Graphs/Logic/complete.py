@@ -28,7 +28,7 @@ def draw_graph_complete(matrix_str):
     plt.title('Дополнение')
     plt.savefig('graphs_images/graph_result_1.png')
     plt.clf() # Чистим фигуру
-def create_intersection_graph(matrix_str1, matrix_str2): #todo: Посмотреть что тут
+def create_intersection_graph(matrix_str1, matrix_str2):
     # Create empty intersection graph
     matrix1 = np.array(eval(matrix_str1))
     matrix2 = np.array(eval(matrix_str2))
@@ -80,6 +80,7 @@ def create_union_graph(matrix_str1, matrix_str2):
             if matrix2[i][j] == 1:
                 union_graph.add_edge(i + 1, j + 1)
 
+    print(union_graph.edges)
     pos = nx.spring_layout(union_graph)
     nx.draw_networkx(union_graph, pos,node_color='#D0DB97')
     plt.title('Объединение')
