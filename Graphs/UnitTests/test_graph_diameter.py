@@ -3,8 +3,8 @@ import networkx as nx
 import numpy as np
 
 class GraphTest(unittest.TestCase):
-    def test_num_edges(self):
-        def get_num_edges(matrix_str):
+    def test_graph_diameter(self):
+        def get_graph_diameter(matrix_str):
             G = nx.Graph()
             matrix = np.array(eval(matrix_str))
 
@@ -60,7 +60,7 @@ class GraphTest(unittest.TestCase):
             matrix_str = test_case["matrix_str"]
             expected_count = test_case["expected_count"]
 
-            actual_count = get_num_edges(matrix_str)
+            actual_count = get_graph_diameter(matrix_str)
 
             self.assertEqual(actual_count, expected_count, "Значения диаметров не сходятся!!")
 
