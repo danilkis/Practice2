@@ -1,46 +1,68 @@
 import numpy as np
-from bottle import request
-#import make
+import networkx as nx
+import matplotlib.pyplot as plt
+
 # Расчет степеней вершин
 def calculate_vertex_degrees(adj_matrix):
     degrees = []
     for row in adj_matrix:
-        degree = sum(row) # Суммируем значения в строке матрицы
+        degree = sum(row)  # Суммируем значения в строке матрицы
         degrees.append(degree)
     return degrees
 
 # Поиск всех правильных графов из N вершин
-def find_all_regular_graphs(N):
-    # Инициализация графа с N вершинами
-    adj_matrix = [[0] * N for _ in range(N)]
+def generate_graphs(n):
+    graphs = []
 
-    # Инициализация степеней вершин
-    degrees = [N-1] * N
+    # Создаем список вершин
+    vertices = list(range(n))
 
-    # Общее количество ребер в полном графе
-    total_edges = N * (N-1) // 2
+    # Генерируем все возможные графы
+    for i in range(n):
+        graph = [[0] * n for _ in range(n)]
 
-    # Перебор возможных ребер
-    for i in range(N-1):
-        for j in range(i+1, N):
-            if degrees[i] > 0 and degrees[j] > 0:
-                adj_matrix[i][j] = 1
-                adj_matrix[j][i] = 1
-                degrees[i] -= 1
-                degrees[j] -= 1
-                total_edges -= 1
+        # Добавляем ребра между вершинами
+        for j in range(n // 2):
+            neighbor = (i + j + 1) % n
+            graph[i][neighbor] = 1
+            graph[neighbor][i] = 1
 
-    # Проверка на правильность графа
-    if total_edges == 0 and all(degrees[i] == 0 for i in range(N)):
-        return adj_matrix
-    else:
-        return None
 
-def Fill(matrix_str1,matrix_str2):
+
+        graphs.append(graph)
+
+    return graphs
+
+def draw_graph(graph, filename):
+    G = nx.Graph()
+
+    # Добавляем вершины в граф
+    G.add_nodes_from(range(len(graph)))
+
+    # Добавляем ребра в граф
+    for i in range(len(graph)):
+        for neighbor in graph[i]:
+            G.add_edge(i, neighbor)
+
+    # Рисуем граф
+    pos = nx.spring_layout(G)  # Определяем позиции вершин
+    nx.draw_networkx(G, pos, node_color='#D0DB97')
+
+    # Добавляем метки степеней вершин
+    degrees = [len(graph[i]) for i in range(len(graph))]
+    for i in range(len(graph)):
+        x, y = pos[i][0], pos[i][1] + 0.05
+        plt.text(x, y, f'deg: {degrees[i]}', ha='center', va='center')
+
+    plt.title('Граф')
+    plt.axis('off')
+    plt.savefig(filename, bbox_inches='tight', pad_inches=0.1)
+    plt.clf()
+
+
+def Fill(matrix_str1, matrix_str2):
     adj_matrix1 = np.array(eval(matrix_str1))
     adj_matrix2 = np.array(eval(matrix_str2))
-
-    #make.draw_graphs(adj_matrix1, adj_matrix2)
 
     degrees1 = calculate_vertex_degrees(adj_matrix1)
     degrees2 = calculate_vertex_degrees(adj_matrix2)
@@ -49,14 +71,26 @@ def Fill(matrix_str1,matrix_str2):
         f"Степень вершин в графе G1: {degrees1}",
         f"Степень вершин в графе G2: {degrees2}",
     ]
-    #просто получить размерность массива
-    n=2
-    # 2) Поиск всех правильных графов из N вершин
-    regular_graphs = find_all_regular_graphs(n)
 
-    if regular_graphs:
-        message.append(f"Regular graph with {n} vertices found.")
-    else:
-        message.append(f"No regular graph with {n} vertices found.")
+    n = adj_matrix1.shape[1]
+    # Пример использования
+    graphs = generate_graphs(n)
+    filenames = [
+        'graphs_images/graph_result_1.png',
+        'graphs_images/graph_result_2.png',
+        'graphs_images/graph_result_3.png'
+    ]
+
+    last_graphs = graphs[-3:]
+
+    # Записываем графы в указанные файлы
+    for i in range(len(graphs)):
+        filename = filenames[i % len(filenames)]  # Используем оператор модуля для выбора индекса файла
+        draw_graph(graphs[i], filename)
+    # Выводим все матрицы смежности
+    for i, graph in enumerate(graphs):
+        message.append(f"Правильный граф из {i + 1} вершин")
+        matrix_str = np.array2string(np.array(graph), separator="\n")
+        message.append(matrix_str)
 
     return message
