@@ -26,9 +26,8 @@
             <div class="main_page">
                 <div id="headings">
                 <h2>Количество вершин</h2>
-                <input type="number" id="numFields" min="2" max="10" onchange="updateInputFields()" />
+                <input type="number" id="numFields"  min="2" max="10" onchange="updateInputFields()" />
                 <button id="Clear" class="clear-button" onclick="allClear()">Очистить</button>
-         
                 <h2>Матрица смежности вершин 1</h2>
                 <div id="gridContainer1" class="grid-container">
                 <!-- Grid 1 will be dynamically generated here -->

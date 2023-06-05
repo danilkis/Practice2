@@ -34,8 +34,11 @@ def handle_operations():
     message = draw_graphs(matrix1, matrix2)
     return template('home', message=message)
 
+
+
 @route('/find', method='POST')
 def handle_find():
+    global message
     data = request.json
     # Retrieve the matrices from the request data
     matrix1 = data.get('matrix1')

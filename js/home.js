@@ -249,3 +249,4 @@ function allClear() {
 
     localStorage.clear(); // Очистка localStorage
 }
+
